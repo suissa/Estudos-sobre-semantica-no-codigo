@@ -108,11 +108,6 @@ Por exemplo:
 
 ![O que é um verbo](http://i.imgur.com/84GZzef.png)
 
-<br>
-
->
-> **... do ponto de vista semântico, contêm as noções de ação, processo ou estado**
->
 
 <br>
 <br>
@@ -126,6 +121,14 @@ Por exemplo:
 
 <br>
 
+<br>
+
+Mostrei esses dois conceitos pois eles basicamente são a mesma coisa, analise comigo os seguintes trechos:
+
+<br>
+>
+> **... do ponto de vista semântico, contêm as noções de ação, processo ou estado**
+>
 >
 > **... são sub-rotinas que executam uma tarefa particular.**
 
