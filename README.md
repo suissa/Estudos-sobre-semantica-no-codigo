@@ -99,23 +99,10 @@ Por exemplo:
 **O conceito oração me remete a outros dois conceitos**
 
 <br>
-
-> 
-> O que é um verbo?
-> 
-
+<br>
 <br>
 
 ![O que é um verbo](http://i.imgur.com/84GZzef.png)
-
-
-<br>
-<br>
-
-
-> O que é uma função?
-
-<br>
 
 ![O que é uma função](http://i.imgur.com/5SggnxS.png)
 
