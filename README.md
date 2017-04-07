@@ -383,7 +383,75 @@ Percebeu que usamos a funçao `map` em um *array*, passando uma funçao como par
 
 > **\- Quais dos códigos anteriores é mais legível e, o mais importante, reusavel?**
 
+Vejamos um exmeplo um pouco mais complexo:
 
+```js
+
+const transformObjectUsingThis = ( fields, obj ) => ( key ) => 
+  ( fields.includes( key ) )
+    ? ( obj[ key ] !== null && obj[ key ] !== undefined )
+      ? ( obj[ key ].map ) 
+        ? obj[ key ].map( transformObjectUsingThis( fields, obj ) )
+        : Object.assign( {}, { key, value: obj[ key ] } )
+      : Object.assign( {}, { key, value: obj[ key ] } )
+    : ( key.constructor === Object ) 
+      ? Object.keys( key )
+              .map( transformObjectUsingThis( fields, key ) )
+      : Object.assign( {}, { key, value: obj[ key ] } )
+      
+const createArrayOfObjectsUsingThis = ( fields, obj ) =>
+  Object.keys( obj ).map( transformObjectUsingThis( fields, obj ) )
+
+const arrayOfObjects = createArrayOfObjectsUsingThis( fields, obj )
+
+```
+
+E agora refatorado:
+
+```js
+
+const isObject = ( something ) =>  
+  something.constructor === Object
+
+const isNullOrUndefined = ( something ) =>  
+  something !== null && something !== undefined
+
+const createObjectUsing = ( key, obj ) => 
+  Object.assign( {}, { key, value: obj[ key ] } )
+
+const ifIsArrayThenCreate = ( obj, key, fields ) => 
+  ( obj[ key ].map ) 
+    ? obj[ key ].map( transformObjectUsingThis( fields, obj ) )
+    : createObjectUsing( key, obj )
+
+const orIfKeyIsObjectThenCreate = ( obj, key, fields ) => 
+  ( isObject( key ) ) 
+      ? createArrayFrom( key ).usingThis( fields )
+      : createObjectUsing( key, obj )
+
+const ifKeyExistsInFieldsList = ( obj, key, fields ) => 
+  ( isNullOrUndefined( obj[ key ] ) )
+      ? ifIsArrayThenCreate( obj, key, fields )
+      : createObjectUsing( key, obj )
+
+const transformObjectUsingThis = ( fields, obj ) => ( key ) => 
+  ( fields.includes( key ) )
+    ? ifKeyExistsInFieldsList( obj, key, fields )
+    : orIfKeyIsObjectThenCreate( obj, key, fields )
+
+const createArrayFrom = ( something ) => ({
+  usingThis: ( fields ) => 
+                Object.keys( something )
+                      .map( transformObjectUsingThis( fields, something ) )
+})
+
+const arrayOfObjects = createArrayFrom( obj ).usingThis( fields )
+
+```
+
+<br>
+
+> **\- E agora quais dos códigos anteriores é mais legível e reusavel?**
 
 ### Tempo Verbal
 
