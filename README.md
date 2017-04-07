@@ -41,6 +41,13 @@ map( THEMES, addingClickToThem )
 > **\- Mais *"complicado"*?**
 > 
 
+Se você olhar por cima pode até parecer mais complexo, porém ele mostra-se mais legível e mais reusável.
+
+<br>
+
+Para corroborar com essa minha ideia irei explicar o porquê que acredito ser melhor da segunda forma.
+
+<br>
 
 
 > A semântica contrapõe-se com frequência à sintaxe, caso em que a primeira se ocupa do que algo significa, enquanto a segunda se debruça sobre as estruturas ou padrões formais do modo como esse algo é expresso (por exemplo, as relações entre predicados e seus argumentos). Dependendo da concepção de significado que se tenha, têm-se diferentes semânticas.
