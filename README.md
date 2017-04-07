@@ -1,12 +1,12 @@
-# Estudos sobre semântica no codigo
+# Estudos sobre aplicação da semântica no código
 
-Estudos de como escrever um codigo mais semântico para maior legibilidade.
+Veremos como escrever um código mais semântico para maior legibilidade.
 
 ![o que é semantica](http://i.imgur.com/txHthtg.png)
 
 > **...o componente do sentido das palavras e da interpretação das sentenças e dos enunciados.**
 
-Então quero que você analise comigo o seguinte código:
+Agora quero que você analise comigo o seguinte código:
 
 ```js
 
@@ -47,13 +47,13 @@ Se você olhar por cima pode até parecer mais complexo, porém ele mostra-se ma
 
 <br>
 
-**Para corroborar com essa minha ideia irei explicar o porquê que acredito ser melhor da segunda forma.**
+**Para corroborar com minha ideia irei explicar o porquê acredito ser melhor da segunda forma.**
 
 <br>
 
 ## Semântica
 
-Eu, pessoalmente, acredito que para quem esta iniciando nao ira entender facilmente o código abaixo, por mais simples que seja.
+Eu pessoalmente acredito que os iniciantes não irão entender facilmente o código abaixo, por mais simples que seja.
 
 ```js
 
@@ -63,7 +63,7 @@ const result = Array.prototype.map.call( themes, ( button ) => {
 
 ```
 
-Logo o passo mais lógico para refatorarmos é encapsular essa lógica com um nome mais descritivo e simples, para que possa ser reaproveitada, por exemplo:
+Logo, a melhor forma de refatorarmos é encapsular essa lógica com um nome mais descritivo e simples para que possa ser reaproveitada, por exemplo:
 
 ```js
 
@@ -71,7 +71,7 @@ const map = ( list, fn ) => Array.prototype.map.call( list, fn )
 
 ```
 
-Isso todo mundo sabe, porém acredito que o mais complicado, semanticamente, é a seguinte parte:
+Isso todo mundo sabe, porém acredito que o mais complicado semanticamente é a seguinte parte:
 
 
 ```js
@@ -80,7 +80,7 @@ button.addEventListener(`click`, () => {} )
 
 ```
 
-Por isso separei qual evento, `click`, iremos utilizar para criar uma oração.
+Por isso separei o evento `click` onde iremos utiliza-lo para criar uma oração.
 
 > "A oração é uma unidade sintática. Trata-se de um enunciado linguístico cuja estrutura caracteriza-se, obrigatoriamente, pela presença de um verbo. Na verdade, a oração é caracterizada, sintaticamente, pela presença de um predicado, o qual é introduzido na língua portuguesa pela presença de um verbo. Geralmente, a oração apresenta um sujeito, termos essenciais, integrantes ou acessórios."
 
@@ -110,7 +110,7 @@ Por exemplo:
 
 <br>
 
-Mostrei esses dois conceitos pois eles basicamente são a mesma coisa, analise comigo os seguintes trechos:
+Mostrei esses dois conceitos porque eles são basicamente a mesma coisa, agora analise comigo os seguintes trechos:
 
 <br>
 
@@ -127,14 +127,14 @@ Mostrei esses dois conceitos pois eles basicamente são a mesma coisa, analise c
 <br>
 <br>
 
-Logo podemos inferir, logicamente, que uma função **precisa ser uma oração** para seguir seu próprio conceito.
+Podemos então inferir, logicamente, que uma função **precisa ser uma oração** para seguir seu próprio conceito.
 
 <br>
 <br>
 
 ## Função
 
-Como vimos anteriormente, uma função precisa ser uma oração, logo seu nome **precisa** conter um verbo, por exemplo:
+Como vimos anteriormente uma função precisa ser uma oração, logo seu nome **precisa** conter um verbo, por exemplo:
 
 ```js
 
@@ -142,7 +142,7 @@ const elementId = ( id ) => document.getElementById( id )
 
 ```
 
-No caso acima, a função `elementId` nao é uma oracao, para corrigi-la podemos renomea-la da seguinte maneira:
+No caso acima a função `elementId` não é uma oração, ela precisa ser corrigida então vamos renomea-la da seguinte maneira:
 
 ```js
 
@@ -168,7 +168,7 @@ Isso ira nos remeter ao conceito de preposição.
 
 *fonte: [http://www.infoescola.com/portugues/preposicao/](http://www.infoescola.com/portugues/preposicao/)*
 
-Essa duas preposicoes, por e com; sao preposicoes chamadas: **essenciais**.
+Essas duas preposicoes, **por** e **com**, são chamadas: **essenciais**.
 
 - [por: exprime, entre outras relações, causa, modo, tempo, meio, lugar, qualidade, estado, preço, etc](https://pt.wiktionary.org/wiki/por)
 - [com: indica várias relações: companhia, causa, instrumento, ligação, modo, oposição](https://pt.wiktionary.org/wiki/com)
@@ -181,7 +181,7 @@ Essa duas preposicoes, por e com; sao preposicoes chamadas: **essenciais**.
 
 <br>
 
-Analise comigo como essa funçao é usada e vamos ver se podemos melhorar sua semantica:
+Analise comigo como essa funçao é usada e vamos ver se podemos melhorar sua semântica:
 
 <br>
 
@@ -207,7 +207,7 @@ Adicionar evento para obter elemento com id
 
 <br>
 
-Perceba, que traduzindo, nossa oracao tem o seguite sentido:
+Perceba que traduzindo nossa oração tem-se o seguite sentido:
 
 > 
 > Você precisa adicionar um evento para só depois obter o elemento com tal id.
@@ -221,7 +221,7 @@ Perceba, que traduzindo, nossa oracao tem o seguite sentido:
 
 <br>
 
-Sabendo disso, podemos refatorar nosso código para a seguinte forma:
+Sabendo disso podemos refatorar nosso código para a seguinte forma:
 
 <br>
 
@@ -242,7 +242,7 @@ const buttonReset = addTheEvent( `click`,
 
 <br>
 
-Agora vamos analisar como ficou o sentido da nossa oracao:
+Agora vamos analisar como ficou o sentido da nossa oração:
 
 ```
 
@@ -254,13 +254,13 @@ adicionar o evento `click` modificando o elemento com o Id `resetMap` para redef
 
 <br>
 
-Percebeu que utilizei também o artigo `the/o` para que nossa oraçao tenha um sentido mais correto e conciso.
+Percebeu que utilizei também o artigo `the/o` para que nossa oração tenha um sentido mais correto e conciso.
 
-Os nomes das funçoes com certeza serao maiores, porém muito mais descritivas e isso, para mim que **ensino**, é de suma importancia para o facil entendimento do codigo ainda mais quando se usa Programaçao Funcional, pois a mesma pode deixar nosso código bem complexo para se ler.
+Os nomes das funções com certeza serão maiores porém muito mais descritivas, isso para mim que **ensino** é de suma importância para o fácil entendimento do código, ainda mais quando se usa Programaçao Funcional, pois a mesma pode deixar nosso código bem complexo para se ler.
 
 <br>
 
-Veja como é nosso código sem encapsular nenhuma lógica em funçoes:
+Veja como é nosso código sem encapsular nenhuma lógica em funções:
 
 ```js
 
@@ -275,7 +275,7 @@ const buttonReset = document
 > 
 > **\- Bem mais simples né?**
 > 
-> **Porém nada reusavel!** E vou te provar o porquê.
+> **Porém nada reusvel!** E provarei-te o porquê.
 > 
 
 <br>
@@ -300,7 +300,7 @@ const buttonReset = document
 
 <br>
 
-Percebeu que temos muita duplicaçao de código? Logo as boas praticas no dizem que devemos encapsular essa lógica em uma funçao para poder reusa-la. 
+Percebeu que temos muita duplicaçao de código? Logo as boas práticas no dizem que devemos encapsular essa lógica em uma funçao para poder reusa-la. 
 
 <br>
 
@@ -329,7 +329,7 @@ const buttonReset = addTheEvent(  `click`,
 
 Isso me recordou a seguinte frase:
 
-> **"O código deve ser escrito para que humanos leiam e ocasionalmente maquinas"**
+> **"O código deve ser escrito para que humanos leiam e ocasionalmente máquinas"**
 
 <br>
 
@@ -338,7 +338,7 @@ Isso me recordou a seguinte frase:
 *fonte: [https://pt.wikipedia.org/wiki/Sem%C3%A2ntica](https://pt.wikipedia.org/wiki/Sem%C3%A2ntica)*
 
 
-Por exemplo, usando a mesma sintaxe mas com semanticas diferentes:
+Por exemplo, usando a mesma sintaxe mas com semânticas diferentes:
 
 > 
 > Eu vou com você para o evento.
@@ -379,7 +379,7 @@ const multipliquePor = ( multiplicador ) => (n) => n * multiplicador
 
 ```
 
-Percebeu que usamos a funçao `map` em um *array*, passando uma funçao como parametro do `map`, agora eu lhe pergunto:
+Percebeu que usamos a função `map` em um *array*, passando uma função como parâmetro do `map`, agora eu lhe pergunto:
 
 > **\- Quais dos códigos anteriores é mais legível e, o mais importante, reusavel?**
 
