@@ -338,10 +338,59 @@ Isso me recordou a seguinte frase:
 *fonte: [https://pt.wikipedia.org/wiki/Sem%C3%A2ntica](https://pt.wikipedia.org/wiki/Sem%C3%A2ntica)*
 
 
+Por exemplo, usando a mesma sintaxe mas com semanticas diferentes:
 
-Na língua portuguesa, o significado das palavras leva em consideração:
+> 
+> Eu vou com você para o evento.
+> 
+> Eu vou sem você para o evento.
+> 
 
-Sinonímia: É a relação que se estabelece entre duas palavras ou mais que apresentam significados iguais ou semelhantes, ou seja, os sinônimos. Exemplos: Cômico - engraçado / Débil - fraco, frágil / Distante - afastado, remoto.
+É a mesma sintaxe pois com e sem sao preposições essenciais, na qual uma é o antônimo da outra.
 
-Antonímia: É a relação que se estabelece entre duas palavras ou mais que apresentam significados diferentes, contrários, isto é, os antônimos: Exemplos. Economizar - gastar / Bem - mal / Bom - ruim.
-Homonímia: É a relação entre duas ou mais palavras que, apesar de possuírem significados diferentes, possuem a mesma estrutura fonológica, ou seja, os homônimos.
+<br>
+
+Traduzindo para JS:
+
+```js
+
+[1, 2, 3, 4].map( ( n ) => n * 2 )
+
+```
+
+
+```js
+
+const multipliquePor2 = (n) => n * 2
+
+[1, 2, 3, 4].map( multipliquePor2 )
+
+```
+
+<br>
+
+Ou melhorando ela para deixar mais reusavel:
+
+```js
+
+const multipliquePor = ( multiplicador ) => (n) => n * multiplicador
+
+[1, 2, 3, 4].map( multipliquePor( 2 ) )
+
+```
+
+Percebeu que usamos a funçao `map` em um *array*, passando uma funçao como parametro do `map`, agora eu lhe pergunto:
+
+> **\- Quais dos códigos anteriores é mais legível e, o mais importante, reusavel?**
+
+
+
+### Tempo Verbal
+
+### Preposição
+
+### Conjunção
+
+### Artigo
+
+### Pronome
