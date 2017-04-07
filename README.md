@@ -98,22 +98,40 @@ Por exemplo:
 
 **O conceito oração me remete a outros dois conceitos**
 
+<br>
+
 > 
 > O que é um verbo?
 > 
 
+<br>
+
 ![O que é um verbo](http://i.imgur.com/84GZzef.png)
+
+<br>
 
 >
 > **... do ponto de vista semântico, contêm as noções de ação, processo ou estado**
 >
 
+<br>
+<br>
+
+
 > O que é uma função?
+
+<br>
 
 ![O que é uma função](http://i.imgur.com/5SggnxS.png)
 
+<br>
+
 >
 > **... são sub-rotinas que executam uma tarefa particular.**
+
+<br>
+
+<br>
 
 ```js
 
