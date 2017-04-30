@@ -453,6 +453,63 @@ const arrayOfObjects = createArrayFrom( obj ).usingThis( fields )
 
 > **\- E agora quais dos códigos anteriores é mais legível e reusavel?**
 
+
+```js
+
+const add = (x, y) => x + y
+const minus = ( x ) => (num) => num - x
+
+const _pipe = (f, g) => (...args) => g(f(...args))
+const pipe = (...fns) => fns.reduce(_pipe)
+
+
+const variacaoDaEntalpia = ( a, b ) => 
+  pipe( add, minus( add(a, b) ) )
+
+const a = 2 
+const b = 3 
+const c = 5 
+const d = 10
+
+const result2 = variacaoDaEntalpia( a, b )( c, d )
+
+console.log('result2', result2)
+
+
+```
+
+<br>
+
+```js
+
+const some = (x, y) => x + y
+const subtraia = ( x ) => (num) => num - x
+
+const _pipe = (f, g) => (...args) => g(f(...args))
+const pipe = (...fns) => fns.reduce(_pipe)
+
+const calcule = pipe
+const someAEnergiaDosProdutos = some
+const depoisSubtraia = subtraia
+const aSomaDaEnergiaDosReagentes = some
+
+const variacaoDaEntalpia = ( a, b ) => 
+  calcule(  someAEnergiaDosProdutos, 
+            depoisSubtraia( 
+              aSomaDaEnergiaDosReagentes(a, b) ) )
+
+const a = 2 
+const b = 3 
+const c = 5 
+const d = 10
+
+const resultado = variacaoDaEntalpia( a, b )( c, d )
+
+console.log('resultado', resultado)
+
+
+```
+
 ### Tempo Verbal
 
 ### Preposição
